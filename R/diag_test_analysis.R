@@ -20,12 +20,12 @@ if(!output_path %in% list.dirs(path="..")){
 list.files(path = path_RData)%>%str_subset(".RData")
 load(paste0(path_RData,"/", "acroos_dep_newnames",".RData"))
 
-over_all_table<-z0_F2[,c("AO.DT_Rx","AO.DT_USG")]%>%table
+over_all_table<-z0_F2[,c("AO.DT_USG","AO.DT_Rx")]%>%table
 overall_ana<-epi.tests(over_all_table)
 
 nested_ana<-list()
 for(i in levels(z0_F2$koutaissof.DT_Rx)){
-  temp_table<-z0_F2[z0_F2$koutaissof.DT_Rx %in% i,c("AO.DT_Rx","AO.DT_USG")]%>%table
+  temp_table<-z0_F2[z0_F2$koutaissof.DT_Rx %in% i,c("AO.DT_USG","AO.DT_Rx")]%>%table
   nested_ana[[i]]<-epi.tests(temp_table)
 }
 nested_ana[["all"]]<-overall_ana
