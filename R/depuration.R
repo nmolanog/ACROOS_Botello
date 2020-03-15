@@ -51,7 +51,7 @@ for(i in vars_for_sino){
 }
 ###merge "Pos","Pos_eco"
 z0_cl[,"HAP"]<-factor(z0_cl[,"HAP"],labels =c("Neg","Pos","Pos_eco"))
-z0_cl[,"AAN"]<-factor(z0_cl[,"AAN"],labels =c("[0,80]","1:160",">1:320"))
+z0_cl[,"AAN"]<-factor(z0_cl[,"AAN"],labels =c("<1:80","1:160",">1:320"))
 ###NP<-NA
 z0_cl[,"CAPILAROSCOPIA"]<-factor(z0_cl[,"CAPILAROSCOPIA"],labels =c("Temp","Act","Tard","Ines","Norm","NP"))
 z0_cl[,"TOTAL.GRADO.ACROSTEOLISIS.RX"]<-factor(z0_cl[,"TOTAL.GRADO.ACROSTEOLISIS.RX"],labels =c("Norm","Dud","Evi","Sev"))
